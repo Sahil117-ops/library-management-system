@@ -3,43 +3,43 @@
 
 int main()
 {
-    struct reader{            //Define structure reader
-        int id;               //id stores reader id
-        char name[20];        //name stores reader's name
-        char due;               //due stores y/n for if any book is due by particular leader
-        int dbid;               //dbid stores due book's id
-    } rdr[10]={0};              //rdr array is initialised with structure of reader
+    struct reader{            
+        int id;               
+        char name[20];        
+        char due;               
+        int dbid;               
+    } rdr[10]={0};             
 
-    struct book{                //structure book defined
-        int id;                 //id here stores book id
-        char name[30];          //name stores name of the book
-        char author[20];        //author stores name of the author
-        char avbl;              //avbl stores availability of the book as y/n
-        int rid;                //rid stores reader id having the book
-    } bk[20]={0};               //bk array is initialised with structure of book
+    struct book{               
+        int id;                
+        char name[30];          
+        char author[20];        
+        char avbl;              
+        int rid;                
+    } bk[20]={0};               
 
-    int choice, searchid, searchid1, n, m;          //some integer variables are declared to be used for performing different functions in program
+    int choice, searchid, searchid1, n, m;          
 
-    printf("\n\t\tWELCOME!\n");               //Welcome message
+    printf("\n\t\tWELCOME!\n");               
     
-    do{                            //do-while loop is used to return to main menu after every case is over.i.e.task is done
+    do{                            
     printf("\n\tLibrary Management System\n\t=========================\n1. Add new book\t\t2. Search book\n3. Add new reader\t4. Search reader\n5. Issue book\t\t6. Submit book\n7. Delete book\t\t8. Delete reader\n9. List of books\t10. Exit\n\nEnter your choice: ");
     scanf("%d", &choice);
 
     switch(choice){
 
-        case 1:                             //Add a book
+        case 1:                     
                 for(int i=0; i<20; i++){
-                    if (bk[i].id==0){               //to find empty space in bk array
+                    if (bk[i].id==0){               
                         printf("Enter name of the book: ");
                         scanf("%s", bk[i].name);
                         printf("Enter name of the author: ");
                         scanf("%s", bk[i].author);
                         printf("Enter book ID: ");
                         scanf("%d", &bk[i].id);
-                        bk[i].avbl='y';             //set availability to y
-                        bk[i].rid=0;                //set readers id to 0 as default
-                        i=20;                       //to exit from for loop
+                        bk[i].avbl='y';             
+                        bk[i].rid=0;                
+                        i=20;                       
                         printf("Book added successfully.\n\n");
                     }
                 }
@@ -63,7 +63,7 @@ int main()
 
         case 3:
                 for(int i=0; i<10; i++){        
-                    if (rdr[i].id==0){                  // to search empty space in rdr array
+                    if (rdr[i].id==0){                  
                         printf("Enter Reader's name: ");
                         scanf("%s", rdr[i].name);
                         printf("Enter Reader id: ");
